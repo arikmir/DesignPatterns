@@ -6,20 +6,31 @@ using DesignPatterns.Creational_Design_Patterns.FactoryMethodDesignPattern;
 
 namespace DesignPatterns
 {
+    using System.Threading.Tasks;
+
     using DesignPatterns.Creational_Design_Patterns.BuilderDesignPatternCoffee;
     using DesignPatterns.Creational_Design_Patterns.FluidInterfaceDesign_Pattern;
     using DesignPatterns.Creational_Design_Patterns.SingletonDesignPattern;
 
-    internal class Program
+     class Program
     {
         static void Main(string[] args)
         {
+            Parallel.Invoke(
+                () => PrintTeacherDetails(),
+                () => PrintStudentdetails()
+            );
+            Console.ReadLine();
+        }
+        private static void PrintTeacherDetails()
+        {
             Singleton fromTeacher = Singleton.GetInstance;
             fromTeacher.PrintDetails("From Teacher");
-            Singleton fromStundet = Singleton.GetInstance;
-            fromStundet.PrintDetails("From Studnet");
-
-            Console.ReadLine();
+        }
+        private static void PrintStudentdetails()
+        {
+            Singleton fromStudent = Singleton.GetInstance;
+            fromStudent.PrintDetails("From Student");
         }
     }
 }
