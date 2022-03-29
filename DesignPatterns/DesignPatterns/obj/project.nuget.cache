@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ljm6TxRMXvt/EKNcBa7P6df+g27Qo00eXbWPZjM5Qwfh/Ue1EKOIK+9mG/apYv7Ol9XNFZS3DGqAHIBSrtgrgA==",
+  "dgSpecHash": "6XqctVarEONhPC2C7djhjoh9gsjv3dI2d+eANEow3w4AmHOU9zHVDyjBiwZLPk6ysf61iglGgMZcyWKDuM6ATQ==",
   "success": true,
   "projectFilePath": "C:\\dev\\DesignPatterns\\DesignPatterns\\DesignPatterns\\DesignPatterns.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ArikMir\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "C:\\Users\\arikm\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
   ],
   "logs": []
 }
