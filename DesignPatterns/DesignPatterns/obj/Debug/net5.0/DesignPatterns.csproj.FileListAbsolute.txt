@@ -13,4 +13,4 @@ C:\dev\DesignPatterns\DesignPatterns\DesignPatterns\obj\Debug\net5.0\DesignPatte
 C:\dev\DesignPatterns\DesignPatterns\DesignPatterns\obj\Debug\net5.0\ref\DesignPatterns.dll
 C:\dev\DesignPatterns\DesignPatterns\DesignPatterns\obj\Debug\net5.0\DesignPatterns.pdb
 C:\dev\DesignPatterns\DesignPatterns\DesignPatterns\obj\Debug\net5.0\DesignPatterns.genruntimeconfig.cache
-C:\dev\DesignPatterns\DesignPatterns\DesignPatterns\bin\Debug\net5.0\ref\DesignPatterns.dll
+C:\dev\DesignPatterns\DesignPatterns\DesignPatterns\obj\Debug\net5.0\refint\DesignPatterns.dll
