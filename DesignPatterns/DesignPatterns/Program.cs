@@ -18,50 +18,33 @@ using DesignPatterns.Structural_Design_Patterns.ProxyDesignPattern;
 using Employee = DesignPatterns.Structural_Design_Patterns.ProxyDesignPattern.Employee;
 using DesignPatterns.Structural_Design_Patterns.VirtualProxyDesignPattern;
 using DesignPatterns.Structural_Design_Patterns.FlyweightDesignPattern;
+using DesignPatterns.Behavioral_Design_Patterns.IteratorDesignPattern;
+using DesignPatterns.Behavioral_Design_Patterns.ObserverDesignPattern;
 
 namespace DesignPatterns
 {
-   
+    
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\n Red color Circles ");
-            for (int i = 0; i < 3; i++)
-            {
-                Circle circle = (Circle)ShapeFactory.GetShape("circle");
-                circle.SetColor("Red");
-                circle.Draw();
-            }
-            Console.WriteLine("\n Green color Circles ");
-            for (int i = 0; i < 3; i++)
-            {
-                Circle circle = (Circle)ShapeFactory.GetShape("circle");
-                circle.SetColor("Green");
-                circle.Draw();
-            }
-            Console.WriteLine("\n Blue color Circles");
-            for (int i = 0; i < 3; ++i)
-            {
-                Circle circle = (Circle)ShapeFactory.GetShape("circle");
-                circle.SetColor("Green");
-                circle.Draw();
-            }
-            Console.WriteLine("\n Orange color Circles");
-            for (int i = 0; i < 3; ++i)
-            {
-                Circle circle = (Circle)ShapeFactory.GetShape("circle");
-                circle.SetColor("Orange");
-                circle.Draw();
-            }
-            Console.WriteLine("\n Black color Circles");
-            for (int i = 0; i < 3; ++i)
-            {
-                Circle circle = (Circle)ShapeFactory.GetShape("circle");
-                circle.SetColor("Black");
-                circle.Draw();
-            }
-            Console.ReadKey();
+            //Create a Product with Out Of Stock Status
+            Subject RedMI = new Subject("Red MI Mobile", 10000, "Out Of Stock");
+
+            //User Anurag will be created and user1 object will be registered to the subject
+            Observer user1 = new Observer("Anurag", RedMI);
+            //User Pranaya will be created and user1 object will be registered to the subject
+            Observer user2 = new Observer("Pranaya", RedMI);
+            //User Priyanka will be created and user3 object will be registered to the subject
+            Observer user3 = new Observer("Priyanka", RedMI);
+
+            Console.WriteLine("Red MI Mobile current state : " + RedMI.GetAvailibility());
+            Console.WriteLine();
+
+            // Now product is available
+            RedMI.SetAvailibility("Available");
+            Console.Read();
         }
 
     }
