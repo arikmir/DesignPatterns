@@ -20,32 +20,35 @@ using DesignPatterns.Structural_Design_Patterns.VirtualProxyDesignPattern;
 using DesignPatterns.Structural_Design_Patterns.FlyweightDesignPattern;
 using DesignPatterns.Behavioral_Design_Patterns.IteratorDesignPattern;
 using DesignPatterns.Behavioral_Design_Patterns.ObserverDesignPattern;
+using DesignPatterns.Behavioral_Design_Patterns.ChainOfResponsibility;
+using DesignPatterns.Behavioral_Design_Patterns.RTChainOfResponsibility;
+using DesignPatterns.Behavioral_Design_Patterns.StateDesignPattern;
+using DesignPatterns.Behavioral_Design_Patterns.RealTimeStateDesignPattern;
+
 
 namespace DesignPatterns
 {
-    
-
     class Program
     {
         static void Main(string[] args)
         {
-            //Create a Product with Out Of Stock Status
-            Subject RedMI = new Subject("Red MI Mobile", 10000, "Out Of Stock");
-
-            //User Anurag will be created and user1 object will be registered to the subject
-            Observer user1 = new Observer("Anurag", RedMI);
-            //User Pranaya will be created and user1 object will be registered to the subject
-            Observer user2 = new Observer("Pranaya", RedMI);
-            //User Priyanka will be created and user3 object will be registered to the subject
-            Observer user3 = new Observer("Priyanka", RedMI);
-
-            Console.WriteLine("Red MI Mobile current state : " + RedMI.GetAvailibility());
-            Console.WriteLine();
-
-            // Now product is available
-            RedMI.SetAvailibility("Available");
+            // Initially Vending Machine will be 'noMoneyState'
+            VendingMachine vendingMachine = new VendingMachine();
+            Console.WriteLine("Current VendingMachine State : "
+                              + vendingMachine.vendingMachineState.GetType().Name + "\n");
+            vendingMachine.DispenseProduct();
+            vendingMachine.SelectProductAndInsertMoney(50, "Pepsi");
+            // Money has been inserted so vending Machine internal state
+            // changed to 'hasMoneyState'
+            Console.WriteLine("\nCurrent VendingMachine State : "
+                              + vendingMachine.vendingMachineState.GetType().Name + "\n");
+            vendingMachine.SelectProductAndInsertMoney(50, "Fanta");
+            vendingMachine.DispenseProduct();
+            // Product has been dispensed so vending Machine internal state
+            // changed to 'NoMoneyState'
+            Console.WriteLine("\nCurrent VendingMachine State : "
+                              + vendingMachine.vendingMachineState.GetType().Name);
             Console.Read();
         }
-
     }
 }
