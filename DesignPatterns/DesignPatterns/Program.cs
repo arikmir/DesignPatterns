@@ -25,24 +25,20 @@ using DesignPatterns.Behavioral_Design_Patterns.RTChainOfResponsibility;
 using DesignPatterns.Behavioral_Design_Patterns.StateDesignPattern;
 using DesignPatterns.Behavioral_Design_Patterns.RealTimeStateDesignPattern;
 using DesignPatterns.Behavioral_Design_Patterns.TemplateDesignPattern;
+using DesignPatterns.Behavioral_Design_Patterns.VisitorDesignPattern;
 
 namespace DesignPatterns
 {
+    using DesignPatterns.Behavioral_Design_Patterns.StrategyDesignPattern;
 
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Build a Concrete House\n");
-            HouseTemplate houseTemplate = new ConcreteHouse();
-            // call the template method
-            houseTemplate.BuildHouse();
-            Console.WriteLine();
-            Console.WriteLine("Build a Wooden House\n");
-            houseTemplate = new WoodenHouse();
-            // call the template method
-            houseTemplate.BuildHouse();
-            Console.Read();
+            CompressionContext zipContext = new CompressionContext(new ZipCompression());
+            zipContext.CreateArchive("file111");
+            CompressionContext rarContext = new CompressionContext(new RarCompression());
+            rarContext.CreateArchive("file2222");
         }
     }
 }
